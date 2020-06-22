@@ -66,10 +66,10 @@ describe("Testing iBooks -> RefineryDB", function(){
         }, Promise.resolve([]));
         return x;
     });
-    it(`Should pass if a book is inserted into RefineryDb
-        and corresponding ID can be found.`, async function(){
+    it(`should pass if a book is inserted into RefineryDb
+        and corresponding ID can be found`, async function(){
         // load event is supposed to load book by title into RefineryDB:
-        let docId = await iBooksEngine.load('lorem ipsum book title');
+        let docId = await iBooksEngine.load('lorem ipsum book title', 'default');
         var response = undefined
         iBooksEngine.recordsDb.auth.then(async ()=>{
             response = await iBooksEngine.recordsDb.db.get(docId);
