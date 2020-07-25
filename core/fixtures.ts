@@ -49,10 +49,3 @@ export let fromConstructRecord: IRecord = constructRecord(
     'default',
     'myNotebook'
 )
-
-export async function removeDatabase(recordsDb: RefineryDatabaseWrapper){
-    await recordsDb.auth;
-    await recordsDb.server.destroy(
-        recordsDb.config.refinery.database.databaseName
-    );
-}

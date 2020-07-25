@@ -18,9 +18,7 @@ let dateDiffThreshold: number = 1000;  // 1 sec
 describe("Test Flashcard Controller", function(){
 
     before(async function(){
-        await controller.recordsDb.auth;
-        await controller.recordsDb.server.create(configObj.refinery.database.databaseName)
-        await controller.recordsDb.db.insert(overdue);
+        await controller.recordsDb.db.put(overdue);
     });
 
     describe("Session start", function(){
@@ -83,6 +81,6 @@ describe("Test Flashcard Controller", function(){
     });
 
     after(async function(){
-        await controller.recordsDb.server.destroy(configObj.refinery.database.databaseName);
+        await controller.recordsDb.db.destroy();
     });
 });
