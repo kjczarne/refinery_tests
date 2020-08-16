@@ -7,7 +7,9 @@ import { config } from '../../src/configProvider';
 import _ from 'lodash';
 
 let overdue: IRecord = Object.assign(this, fullRecord);
-overdue.flashcard.scheduler.nextRevision = Date.now() - 60000;
+if (overdue.flashcard !== undefined){
+    overdue.flashcard.scheduler.nextRevision = Date.now() - 60000;
+}
 
 let controller: FlashcardRevisionController = new FlashcardRevisionController();
 
