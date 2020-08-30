@@ -11,7 +11,7 @@ export let minimalRecord: IRecord = {
   timestampCreated: Date.now(),
   timestampModified: Date.now(),
   source: 'source',
-  set: 'default',
+  batch: 'default',
   pastExports: new Array<number>(),
   flashcard: {
     scheduler: {
@@ -30,7 +30,7 @@ export let fullRecord: IRecord = {
   timestampModified: Date.now(),
   richContent: '',
   source: 'source',
-  set: 'default',
+  batch: 'default',
   pastExports: new Array<number>(), 
   flashcard: {
     scheduler: {
