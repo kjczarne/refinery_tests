@@ -1,18 +1,19 @@
 import * as assert from 'assert';
 import { MdEngine } from '../../src/handlers/markdown';
 import { delay } from '../../src/utils';
-import { promises as fs, readFileSync } from 'fs';
+import { unlinkSync, readFileSync } from 'fs';
 import { IRecord } from '../../src';
+import { fullRecord } from '../core/fixtures';
 
 var engine: MdEngine | undefined = undefined;
 
 describe("Test Markdown Ingress", function () {
-  before(function () {
+  before(async function () {
     engine = new MdEngine();
   });
   it("should load two exact flashcards from test.md", async function () {
-    let ids = await engine?.load('./tests/res/markdown/test.md');
-    delay(100);
+    let ids = await engine?.load('./tests/res/markdown/test.md', undefined, 'myNotebook');
+    await delay(100);
     assert.equal(ids?.length, 2);
     if (ids !== undefined) {
       let rec1 = engine?.recordsDb.db.get(ids[0]);
@@ -21,14 +22,19 @@ describe("Test Markdown Ingress", function () {
       assert.notEqual(rec2, undefined);
     }
   });
+  after(async function () {
+    await engine?.recordsDb.db.destroy();
+  });
 });
 
 describe("Test Markdown Egress", function(){
-  before(function () {
+  before(async function () {
     engine = new MdEngine();
+    await engine.recordsDb.db.put(fullRecord);
+    await delay(100);
   });
   it("should dump a markdown file", async function(){
-    let ids = await engine?.export('temp.md', 'default', 'default');
+    let ids = await engine?.export('temp.md', 'default', 'myNotebook');
     assert.notEqual(ids, undefined);
     assert.notEqual(ids?.length, 0);
     let mdFileSerialized = readFileSync('temp.md', {encoding: 'utf-8'});
@@ -38,6 +44,8 @@ describe("Test Markdown Egress", function(){
     }
   });
   after(async function () {
-    await fs.unlink('temp.md');
+    await engine?.recordsDb.db.destroy();
+    unlinkSync('temp.md');
+    await delay(50);
   });
 });

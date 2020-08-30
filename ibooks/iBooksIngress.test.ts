@@ -87,5 +87,6 @@ describe("Testing iBooks -> RefineryDB", function () {
     await fs.unlink(iBooksDbPath);
     await fs.unlink(iBooksLibraryDbPath);
     await iBooksEngine.recordsDb.db.destroy();
+    await delay(50);
   });
 });

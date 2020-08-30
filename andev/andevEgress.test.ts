@@ -4,6 +4,7 @@ import * as csv from 'fast-csv';
 import { unlinkSync, readFileSync } from 'fs';
 import * as assert from 'assert';
 import { IRecord } from '../../src';
+import { delay } from '../../src/utils';
 
 var controller: AndevFldsEngine = new AndevFldsEngine();
 
@@ -35,5 +36,6 @@ describe("Testing AnDev Flashcards Egress", function () {
   after(async function () {
     await controller.recordsDb.db.destroy();
     unlinkSync('temp.csv');
+    await delay(50);
   });
 });
