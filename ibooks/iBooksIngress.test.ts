@@ -73,7 +73,7 @@ describe("Testing iBooks -> RefineryDB", function () {
     var response = undefined
     try {
       await delay(100);  // CouchDb is "eventually consistent", cannot expect update to happen within microseconds
-      response = await iBooksEngine.recordsDb.db.get(docId);
+      response = await iBooksEngine.recordsDb.db.get(docId[0]);
 
     } catch (err) {
       logger.log({
