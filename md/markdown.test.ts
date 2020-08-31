@@ -45,7 +45,7 @@ describe("Test Markdown Egress", function(){
   });
   after(async function () {
     await engine?.recordsDb.db.destroy();
-    unlinkSync('temp.md');
+    // unlinkSync('temp.md');
     await delay(50);
   });
 });

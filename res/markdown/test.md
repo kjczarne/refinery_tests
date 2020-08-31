@@ -1,3 +1,5 @@
+Whatever text placed here shouldn't affect the tests.
+
 # SomeBatch ⚗️
 
 - Lorem ipsum
@@ -8,3 +10,5 @@
 
     Morituri te salutant
 ⚗️
+
+Whatever text placed here shouldn't affect the tests either.
