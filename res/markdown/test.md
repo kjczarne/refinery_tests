@@ -1,6 +1,6 @@
 Whatever text placed here shouldn't affect the tests.
 
-# SomeBatch ⚗️
+## SomeBatch ⚗️
 
 - Lorem ipsum
 

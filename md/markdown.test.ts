@@ -22,6 +22,16 @@ describe("Test Markdown Ingress", function () {
       assert.notEqual(rec2, undefined);
     }
   });
+  it("should not load hashes into the title", async function(){
+    let ids = await engine?.load('./tests/res/markdown/test.md', undefined, 'myNotebook');
+    await delay(50);
+    if (ids !== undefined) {
+      let rec1: IRecord = <IRecord><unknown> await engine?.recordsDb.db.get(ids[0]);
+      let rec2: IRecord = <IRecord><unknown> await engine?.recordsDb.db.get(ids[0]);
+      assert.doesNotMatch(rec1.batch, /#.*/);
+      assert.doesNotMatch(rec2.batch, /#.*/);
+    }
+  });
   after(async function () {
     await engine?.recordsDb.db.destroy();
   });
