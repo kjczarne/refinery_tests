@@ -2,7 +2,7 @@ import assert from 'assert';
 import { sqlSchema, sqlQueryRun, queryPrepare } from '../../src/sql';
 import { logger, delay } from '../../src/utils';
 import { dedent } from 'ts-dedent';
-import { AppleiBooksEngine } from '../../src/handlers/iBooks';
+import { AppleiBooksEngine } from '../../src/engines/iBooks';
 import { promises as fs, readFileSync } from 'fs';
 
 let iBooksDbPath: string = './tests/res/ibooks/ibooks_db_mock.sqlite';

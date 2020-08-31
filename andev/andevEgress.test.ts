@@ -1,4 +1,4 @@
-import { AndevFldsEngine } from '../../src/handlers/andevFlashcards';
+import { AndevFldsEngine } from '../../src/engines/andevFlashcards';
 import { fullRecord } from '../core/fixtures';
 import * as csv from 'fast-csv';
 import { unlinkSync, readFileSync } from 'fs';

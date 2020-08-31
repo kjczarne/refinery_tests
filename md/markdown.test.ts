@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { MdEngine } from '../../src/handlers/markdown';
+import { MdEngine } from '../../src/engines/markdown';
 import { delay } from '../../src/utils';
 import { unlinkSync, readFileSync } from 'fs';
 import { IRecord } from '../../src';
