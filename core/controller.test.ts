@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { FlashcardRevisionController } from '../../src/revisionController';
+import { FlashcardRevisionController } from '../../src/controllers/revisionController';
 import { fullRecord } from './fixtures';
 import { IRecord } from '../../src/interfaces';
 import { consoleDisplayCallback } from '../../src/utils';
