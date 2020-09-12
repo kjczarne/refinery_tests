@@ -4,7 +4,7 @@ import * as csv from 'fast-csv';
 import { unlinkSync, readFileSync } from 'fs';
 import * as assert from 'assert';
 import { IRecord } from '../../src';
-import { delay } from '../../src/utils';
+import { delay } from '../../src/utilities/utils';
 
 var controller: AndevFldsEngine = new AndevFldsEngine();
 

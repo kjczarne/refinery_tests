@@ -1,6 +1,6 @@
 import assert from 'assert';
-import { sqlSchema, sqlQueryRun, queryPrepare } from '../../src/sql';
-import { logger, delay } from '../../src/utils';
+import { sqlSchema, sqlQueryRun, queryPrepare } from '../../src/utilities/sql';
+import { logger, delay } from '../../src/utilities/utils';
 import { dedent } from 'ts-dedent';
 import { AppleiBooksEngine } from '../../src/engines/iBooks';
 import { promises as fs, readFileSync } from 'fs';

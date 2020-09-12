@@ -1,5 +1,5 @@
 import { IRecord } from "../../src/interfaces";
-import { constructRecord, RefineryDatabaseWrapper } from "../../src/engine";
+import { constructRecord } from "../../src/engine";
 
 /**
  * minimal IRecord instance (no optional fields are set)
@@ -46,8 +46,6 @@ export let fromConstructRecord: IRecord = constructRecord(
   'lorem ipsum',
   'dolor set amet',
   'source',
-  undefined,
-  undefined,
   'default',
   'myNotebook'
 )

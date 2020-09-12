@@ -1,6 +1,6 @@
 import * as assert from 'assert';
 import { MdEngine } from '../../src/engines/markdown';
-import { delay } from '../../src/utils';
+import { delay } from '../../src/utilities/utils';
 import { unlinkSync, readFileSync } from 'fs';
 import { IRecord } from '../../src';
 import { fullRecord } from '../core/fixtures';
