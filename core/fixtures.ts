@@ -1,5 +1,5 @@
 import { IRecord } from "../../src/interfaces";
-import { constructRecord } from "../../src/engine";
+import { constructRecord } from "../../src/databaseWrapper";
 
 /**
  * minimal IRecord instance (no optional fields are set)

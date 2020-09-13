@@ -1,6 +1,6 @@
 import * as assert from 'assert';
 import { fromConstructRecord, fullRecord } from './fixtures';
-import { isRecord } from '../../src/engine';
+import { isRecord } from '../../src/databaseWrapper';
 import { IRecord } from '../../src/interfaces';
 
 describe("Test Engine", function () {
