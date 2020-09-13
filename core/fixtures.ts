@@ -1,30 +1,21 @@
 import { IRecord } from "../../src/interfaces";
-import { constructRecord } from "../../src/databaseWrapper";
+import { Record } from "../../src/record";
 
 /**
  * minimal IRecord instance (no optional fields are set)
  */
 export let minimalRecord: IRecord = {
-  dataField1: "lorem ipsum",
-  dataField2: "dolor set amet",
+  data: ["lorem ipsum", "dolor set amet"],
   _id: 'lorem',
   timestampCreated: Date.now(),
   timestampModified: Date.now(),
   source: 'source',
   batch: 'default',
-  pastExports: new Array<number>(),
-  flashcard: {
-    scheduler: {
-      easinessFactor: 2.5,
-      pastRevisions: new Array<number>(),
-      nextRevision: Date.now()
-    }
-  }
+  pastExports: new Array<number>()
 }
 
 export let fullRecord: IRecord = {
-  dataField1: "lorem ipsum",
-  dataField2: "dolor set amet",
+  data: ["lorem ipsum", "dolor set amet"],
   _id: 'lorem',
   timestampCreated: Date.now(),
   timestampModified: Date.now(),
@@ -42,9 +33,9 @@ export let fullRecord: IRecord = {
   notebook: 'myNotebook'
 }
 
-export let fromConstructRecord: IRecord = constructRecord(
-  'lorem ipsum',
-  'dolor set amet',
+export let fromConstructRecord: Record = new Record(
+  ['lorem ipsum',
+  'dolor set amet'],
   'source',
   'default',
   'myNotebook'

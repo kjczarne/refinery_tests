@@ -7,7 +7,7 @@ import { IRecord } from '../../src';
 import { delay } from '../../src/utilities/utils';
 
 var controller: AndevFldsEngine = new AndevFldsEngine();
-
+console.log(process.env.REFINERY_USER)
 describe("Testing AnDev Flashcards Egress", function () {
 
   before(async function () {
@@ -16,14 +16,14 @@ describe("Testing AnDev Flashcards Egress", function () {
 
   it("should match expected CSV row", async function () {
     await controller.export('temp.csv', 'default', 'myNotebook')
-    let expectedContent = `${fullRecord.dataField1},${fullRecord.dataField2}\n`
+    let expectedContent = `${fullRecord.data[0]},${fullRecord.data[1]}\n`
     let actualContent = readFileSync('temp.csv', { encoding: 'utf-8' });
     assert.equal(expectedContent, actualContent)
   });
 
   it("should match expected CSV row for a flipped card", async function () {
     await controller.export('temp.csv', 'default', 'myNotebook', undefined, true)
-    let expectedContent = `${fullRecord.dataField2},${fullRecord.dataField1}\n`
+    let expectedContent = `${fullRecord.data[1]},${fullRecord.data[0]}\n`
     let actualContent = readFileSync('temp.csv', { encoding: 'utf-8' });
     assert.equal(expectedContent, actualContent)
   });
