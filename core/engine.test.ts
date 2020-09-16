@@ -1,7 +1,7 @@
 import * as assert from 'assert';
 import { fromConstructRecord, fullRecord } from './fixtures';
-import { Record } from '../../src/record';
-import { IRecord } from '../../src/interfaces';
+import { Record } from 'refinery-core';
+import { IRecord } from 'refinery-core';
 
 describe("Test Engine", function () {
   describe("\`constructRecord\` function", function () {

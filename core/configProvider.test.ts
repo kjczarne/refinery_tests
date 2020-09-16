@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { config } from '../../src/configProvider';
+import { config } from 'refinery-core';
 
 let configObj = config();
 

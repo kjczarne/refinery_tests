@@ -1,10 +1,10 @@
-import { AndevFldsEngine } from '../../src/engines/andevFlashcards';
+import { AndevFldsEngine } from 'refinery-engines';
 import { fullRecord } from '../core/fixtures';
 import * as csv from 'fast-csv';
 import { unlinkSync, readFileSync } from 'fs';
 import * as assert from 'assert';
-import { IRecord } from '../../src';
-import { delay } from '../../src/utilities/utils';
+import { IRecord } from 'refinery-core';
+import { delay } from 'refinery-core';
 
 var controller: AndevFldsEngine = new AndevFldsEngine();
 console.log(process.env.REFINERY_USER)

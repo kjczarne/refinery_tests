@@ -1,5 +1,5 @@
-import { IRecord } from "../../src/interfaces";
-import { Record } from "../../src/record";
+import { IRecord } from "refinery-core";
+import { Record } from "refinery-core";
 
 /**
  * minimal IRecord instance (no optional fields are set)

@@ -1,8 +1,8 @@
 import assert from 'assert';
-import { sqlSchema, sqlQueryRun, queryPrepare } from '../../src/utilities/sql';
-import { logger, delay } from '../../src/utilities/utils';
+import { sqlSchema, sqlQueryRun, queryPrepare } from 'refinery-core';
+import { logger, delay } from 'refinery-core';
 import { dedent } from 'ts-dedent';
-import { AppleiBooksEngine } from '../../src/engines/iBooks';
+import { AppleiBooksEngine } from 'refinery-engines';
 import { promises as fs, readFileSync } from 'fs';
 
 let iBooksDbPath: string = './tests/res/ibooks/ibooks_db_mock.sqlite';

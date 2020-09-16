@@ -1,9 +1,8 @@
 import * as assert from 'assert';
-import { MdEngine } from '../../src/engines/markdown';
-import { delay, logger } from '../../src/utilities/utils';
+import { MdEngine } from 'refinery-engines';
+import { delay, logger } from 'refinery-core';
 import { unlinkSync, readFileSync } from 'fs';
-import { IRecord } from '../../src';
-import { Record } from '../../src';
+import { Record } from 'refinery-core';
 import { fullRecord } from '../core/fixtures';
 
 var engine: MdEngine | undefined = undefined;
