@@ -16,8 +16,8 @@ describe("Test Markdown Ingress", function () {
     await delay(100);
     assert.equal(ids?.length, 2);
     if (ids !== undefined) {
-      let rec1 = engine?.recordsDb.db.get(ids[0]);
-      let rec2 = engine?.recordsDb.db.get(ids[1]);
+      let rec1 = await engine?.recordsDb.db.get(ids[0]);
+      let rec2 = await engine?.recordsDb.db.get(ids[1]);
       assert.notEqual(rec1, undefined);
       assert.notEqual(rec2, undefined);
     }

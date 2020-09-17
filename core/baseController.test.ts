@@ -9,7 +9,7 @@ describe("Test External Engine", function(){
         baseCtl = new BaseController();
     })
     it("should load a fake engine", function(){
-        // assert.notEqual(baseCtl?.allEngineNames.filter((val)=>{return val === 'fake'}).length, 0);
+        assert.notEqual(baseCtl?.allEngineNames.filter((val)=>{return val === 'fake'}).length, 0);
         // FIXME: load works (tested manually) but circular dependency if testing from within
     });
 });
