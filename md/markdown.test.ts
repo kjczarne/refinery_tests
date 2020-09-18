@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { MdEngine } from 'refinery-engines';
+import { MdEngine } from 'refinery-core';
 import { delay, logger } from 'refinery-core';
 import { unlinkSync, readFileSync } from 'fs';
 import { Record } from 'refinery-core';

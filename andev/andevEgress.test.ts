@@ -1,4 +1,4 @@
-import { AndevFldsEngine } from 'refinery-engines';
+import { AndevFldsEngine } from 'refinery-core';
 import { fullRecord } from '../core/fixtures';
 import * as csv from 'fast-csv';
 import { unlinkSync, readFileSync } from 'fs';
